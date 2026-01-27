@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betül Atalay | Portfolyo</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- AYAR PANELİ (TASARIMI BURADAN YÖNETEBİLİRSİN) --- */
+        :root {
+            /* Ana Renk (Mavi tonu): Mühendislik için ideal, değiştirebilirsin */
+            --primary-color: #2563eb; 
+            /* Arka Plan Rengi (Hafif Gri): Göz yormaz */
+            --bg-color: #f3f4f6;
+            /* Kart Rengi (Beyaz) */
+            --card-bg: #ffffff;
+            /* Yazı Renkleri */
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            /* Font Ayarı */
+            --main-font: 'Poppins', sans-serif;
+        }
+
+        /* --- GENEL TASARIM --- */
+        * { box-sizing: border-box; }
+        body {
+            font-family: var(--main-font);
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr; /* Sol: 300px, Sağ: Kalan yer */
+            gap: 30px;
+        }
+
+        /* --- SOL MENÜ (KİMLİK KARTI) --- */
+        .sidebar {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            height: fit-content;
+            /* Modern Gölge Efekti */
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 40px; /* Sayfa kayınca sabit kalsın */
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 20px; /* Karemsi yuvarlak */
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #eff6ff;
+        }
+
+        .my-name { font-size: 1.8rem; font-weight: 700; margin: 10px 0 5px 0; }
+        .my-title { 
+            background: #eff6ff; 
+            color: var(--primary-color); 
+            padding: 6px 12px; 
+            border-radius: 8px; 
+            font-size: 0.9rem; 
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .contact-list { list-style: none; padding: 0; text-align: left; }
+        .contact-list li { 
+            margin-bottom: 15px; 
+            display: flex; 
+            align-items: center; 
+            color: var(--text-light); 
+            font-size: 0.95rem;
+        }
+        .contact-list i { 
+            width: 35px; 
+            color: var(--primary-color); 
+            font-size: 1.2rem; 
+        }
+
+        .cv-button {
+            display: block;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 30px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .cv-button:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+        /* --- SAĞ TARAF (İÇERİK) --- */
+        .content { display: flex; flex-direction: column; gap: 40px; }
+
+        section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px -5px rgba(0,0,0,0.05);
+        }
+
+        h2.section-title {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f3f4f6;
+            color: var(--text-dark);
+        }
+
+        /* --- SKILLS (YETENEKLER) TASARIMI --- */
+        .skills-wrapper { display: flex; flex-wrap: wrap; gap: 12px; }
+        .skill-tag {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            color: var(--text-dark);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .skill-tag:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: #eff6ff;
+        }
+
+        /* --- PROJE KARTLARI TASARIMI --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Yan yana sığdır */
+            gap: 25px;
+        }
+
+        .project-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.3s;
+            background: #fff;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .project-info { padding: 20px; }
+        .project-name { 
+            font-size: 1.2rem; 
+            font-weight: 600; 
+            margin: 0 0 10px 0; 
+        }
+        .project-techs {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .project-link {
+            text-decoration: none;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        /* MOBİL UYUMLULUK */
+        @media (max-width: 850px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <img src="https://via.placeholder.com/300" alt="Profil Fotoğrafı" class="profile-pic">
+            
+            <h1 class="my-name">Betül Atalay</h1>
+            <span class="my-title">Electrical & Electronics Engineer</span>
+
+            <ul class="contact-list">
+                <li><i class="fa-solid fa-envelope"></i> email@adresin.com</li>
+                <li><i class="fa-solid fa-location-dot"></i> Türkiye</li>
+                <li><i class="fa-brands fa-github"></i> github.com/betulatalay1</li>
+                <li><i class="fa-brands fa-linkedin"></i> linkedin.com/in/...</li>
+            </ul>
+
+            <a href="cv.pdf" class="cv-button" target="_blank">
+                <i class="fa-solid fa-download"></i> Download CV
+            </a>
+        </aside>
+
+
+        <main class="content">
+            
+            <section>
+                <h2 class="section-title">About Me</h2>
+                <p>
+                    Hello! I am an Electrical and Electronics Engineering student. 
+                    I focus on embedded systems, VLSI design, and hardware development...
+                </p>
+            </section>
+
+
+            <section>
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-wrapper">
+                    <span class="skill-tag">C / C++</span>
+                    <span class="skill-tag">STM32</span>
+                    <span class="skill-tag">VLSI Design</span>
+                    <span class="skill-tag">Altium Designer</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Fusion 360</span>
+                    </div>
+            </section>
+
+
+            <section>
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Proje Resmi" class="project-img">
+                        <div class="project-info">
+                            <h3 class="project-name">HappyPaws Project</h3>
+                            <span class="project-techs">STM32F407 • Embedded C • Fusion 360</span>
+                            <p class="project-desc">
+                                Automated pet feeder system designed with custom PCB and 3D printed housing.
+                            </p>
+                            <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x250" alt="Proje Resmi" class="project-img">
+                        <div class="project-info">
+                            <h3 class="project-name">8-bit ALU Design</h3>
+                            <span class="project-techs">Electric VLSI • LTSpice</span>
+                            <p class="project-desc">
+                                Complete Arithmetic Logic Unit design from transistor level simulation.
+                            </p>
+                            <a href="#" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
