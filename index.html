@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Betül Atalay | Electrical & Electronics Engineer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* --- COLOR PALETTE & VARS --- */
+:root {
+  --bg-color: #fdfdfd;
+  --text-main: #2d3748;
+  --text-muted: #718096;
+  
+  /* Aesthetic Tech Colors - Lavender/Purple Theme */
+  --primary: #6c5ce7; 
+  --primary-dark: #5649c0;
+  --primary-light: #a29bfe; 
+  --accent: #fd79a8; /* Soft Pink/Coral details */
+  --dark-accent: #1a1a2e; 
+  
+  --glass: rgba(255, 255, 255, 0.85);
+  --border: rgba(200, 200, 200, 0.4);
+  --shadow: 0 12px 40px -12px rgba(0,0,0,0.1);
+  --radius: 24px;
+  --section-spacing: 100px;
+}
+
+* { box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top left, #f3e8ff, transparent 40%),
+              radial-gradient(circle at bottom right, #e0f2fe, transparent 40%),
+              #fdfdfd;
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* --- STRUCTURE --- */
+.container {
+  width: min(1100px, 90vw);
+  margin: auto;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; padding: 0; margin: 0; }
+
+/* --- HEADER (NAVBAR) --- */
+header {
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+  margin-top: 20px;
+}
+
+nav {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 15px 30px;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: center; /* Centered links */
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.nav-links a {
+  margin: 0 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  position: relative;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+/* --- COMMON SECTIONS --- */
+section { padding: var(--section-spacing) 0; }
+
+h1, h2, h3, h4 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--dark-accent);
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+  min-height: 85vh;
+}
+
+.hero-text h1 {
+  /* DÜZELTME: Line-height artırıldı ve padding eklendi (ü harfinin kesilmemesi için) */
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 800;
+  line-height: 1.3; /* Satır yüksekliği artırıldı */
+  padding-top: 10px; /* Üstten boşluk */
+  padding-bottom: 10px; /* Alttan boşluk */
+  margin-bottom: 5px;
+  letter-spacing: -1px;
+  
+  /* Gradient Text Effect */
+  background: linear-gradient(45deg, var(--dark-accent), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block; /* Kesilmeyi önlemeye yardımcı olur */
+}
+
+.hero-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 25px;
+  display: block;
+}
+
+.hero-text p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s all ease;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+}
+.btn-primary:hover { transform: translateY(-3px); background: var(--primary-dark); }
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+.btn-outline:hover { background: var(--primary); color: white; transform: translateY(-3px); }
+
+
+.social-links a {
+  margin-right: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+.social-links a:hover { color: var(--primary); }
+
+
+/* Profile Photo Area */
+.profile-img-wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: auto;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Circle */
+  border: 6px solid var(--glass);
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 2;
+  background-color: #e0e7ff; /* Placeholder color */
+}
+
+/* Decorative Blob background */
+.profile-blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, var(--primary-light) 0%, transparent 70%);
+  opacity: 0.4;
+  z-index: 1;
+  filter: blur(40px);
+}
+
+
+/* --- EXPERIENCE SECTION --- */
+.exp-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.exp-card {
+    background: var(--glass);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.exp-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background: var(--primary);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.company-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark-accent);
+}
+
+.role-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: 5px;
+}
+
+.exp-date {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: #f0f2f5;
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+
+.exp-details li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 25px;
+    color: var(--text-main);
+}
+.exp-details li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+
+/* --- PROJECTS GRID --- */
+.grid-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: var(--glass);
+  border-radius: var(--radius);
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(108, 92, 231, 0.2);
+  border-color: var(--primary-light);
+}
+
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+}
+
+.card-content { flex-grow: 1; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: #ede9fe; /* Very light purple */
+  color: var(--primary-dark);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.link-arrow {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+}
+.link-arrow svg { margin-left: 5px; transition: 0.3s margin; }
+.link-arrow:hover svg { margin-left: 10px; }
+
+/* --- SKILLS & INTERESTS --- */
+.grid-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.skill-group { margin-bottom: 25px; }
+.skill-group h4 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.skill-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.skill-list li {
+  position: relative;
+  padding-left: 20px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.skill-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* --- CONTACT --- */
+.contact-box {
+  background: linear-gradient(120deg, var(--primary), var(--primary-dark));
+  color: white;
+  text-align: center;
+  padding: 60px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.contact-box h2 { color: white; }
+.contact-box h2::after { background: rgba(255,255,255,0.6); margin: 8px auto; }
+.contact-box p { color: rgba(255,255,255,0.9); font-size: 1.1rem; }
+.contact-email { color: white; font-weight: 800; font-size: 2rem; text-decoration: none; display: block; margin-top: 20px;}
+.contact-email:hover { text-decoration: underline; }
+
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 50px 0;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; text-align: center; gap: 40px; padding-top: 120px;}
+  .hero-text h1 { font-size: 3.5rem; }
+  .hero-subtitle { font-size: 1.8rem; }
+  .hero-buttons { justify-content: center; }
+  .profile-img-wrapper { width: 280px; height: 280px; order: -1; }
+  .exp-header { flex-direction: column; gap: 10px; }
+  .grid-split { grid-template-columns: 1fr; }
+  nav { display: none; /* Simplified for mobile */ }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="nav-links">
+        <a href="#about">About Me</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="about" class="container hero">
+    <div class="hero-text">
+      <h1>BETÜL ATALAY</h1>
+      <span class="hero-subtitle">Electrical & Electronics Engineer</span>
+      <p>
+        I design embedded systems, build real prototypes, and love turning ideas into hardware. 
+        Passionate about bridging the gap between software and physical reality through innovative engineering.
+      </p>
+      
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <a href="#" target="_blank" class="btn btn-outline">Download CV 📄</a>
+      </div>
+      
+      <div class="social-links">
+        <a href="https://github.com/betulatalay1" target="_blank">GitHub ↗</a>
+        <a href="#">LinkedIn ↗</a>
+        <a href="mailto:betul@example.com">Email ↗</a>
+      </div>
+    </div>
+
+    <div class="profile-img-wrapper">
+      <div class="profile-blob"></div>
+      <img src="https://raw.githubusercontent.com/betulatalay1/betulatalay.github.io/main/profile.jpeg" alt="Betül Atalay" class="profile-img">
+    </div>
+  </section>
+
+
+  <section id="experience" style="background: linear-gradient(to bottom, #fdfdfd, #f4f7fe);">
+    <div class="container">
+        <h2>Professional Experience</h2>
+        <div class="exp-container">
+
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div>
+                        <div class="company-name">ASELSAN</div>
+                        <div class="role-title">Candidate Engineer </div>
+                    </div>
+                    <span class="exp-date">Feb 2025 – Jun 2025</span>
+                </div>
+                <ul class="exp-details">
+					<li>
+						<strong>Embedded Development:</strong> Programmed the <strong>PIC32MZ</strong> microcontroller on the <strong>EasyPIC Fusion v7</strong> board. Wrote bare-metal, register-level drivers.
+					</li>
+					<li>
+						<strong>Circuit Design & Simulation:</strong> Designed Pulse Width Modulation (<strong>PWM</strong>) circuits and performed signal analysis under different frequency and duty cycle conditions using <strong>TINA-TI</strong> (Texas Instruments).
+					</li>
+                </ul>
+            </div>
+
+             <div class="exp-card">
+                <div class="exp-header">
+                    <div>
+                        <div class="company-name">ASELSAN</div>
+                        <div class="role-title">Intern</div>
+                    </div>
+                    <span class="exp-date">Summer 2025</span>
+                </div>
+                <ul class="exp-details">
+                    <li>Engineered a <strong>UART-to-Flash Packet Handler</strong> on PIC32MZ, implementing <strong>EEPROM emulation via Program Flash</strong> to store structured data with checksum verification and state-machine-based parsing.</li>
+                    <li>Established <strong>Ethernet communication</strong> by developing custom firmware for LAN8720 PHY bring-up and conducted a code-level analysis of the TCP/IP stack for driver integration.</li>
+                    <li>Conducted a technical study on <strong>Diagnostic Registers</strong> and peripheral status flags to implement low-level health monitoring and system error detection.</li>
+                </ul>
+            </div>
+
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div>
+                        <div class="company-name">TÜBİTAK UZAY</div>
+                        <div class="role-title">Intern</div>
+                    </div>
+                    <span class="exp-date">Summer 2024</span>
+                </div>
+                <ul class="exp-details">
+                    <li><strong>BALİSTİKA – Çentik Bulma Çalışmaları</strong></li>
+                    <li>Contributed to computer vision and AI model development projects.</li>
+                    <li> Focused on data preprocessing and image classification tasks using <strong>YOLOv5</strong>.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+  </section>
+
+
+  <section id="projects" class="container">
+    <h2>Projects</h2>
+    <div class="grid-projects">
+
+		<div class="card project-card">
+			<div class="card-content">
+				<h3 class="project-title">8-Bit ALU Design ⚡</h3>
+				<p>Full custom VLSI design of an 8-bit Arithmetic Logic Unit, from transistor-level schematic to physical layout and SPICE simulation.</p>
+				<div class="tags">
+					<span class="tag">Electric VLSI</span>
+					<span class="tag">Extended Opcode Set</span>
+					<span class="tag">SPICE</span>
+					<span class="tag">Digital IC</span>
+				</div>
+			</div>
+			<a href="https://github.com/betulatalay1/8-Bit-ALU-Project" class="link-arrow" target="_blank">
+				View Details 
+				<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+					<path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</a>
+		</div>
+
+      <div class="card project-card">
+        <div class="card-content">
+            <h3 class="project-title">Happy Paws: Automatic Pet Feeder 🐾</h3>
+            <p>An IoT-enabled automatic pet feeder with scheduled feeding and remote control capabilities via a mobile app interface.</p>
+            <div class="tags">
+            <span class="tag">STM32</span><span class="tag">IoT</span><span class="tag">Motor Control</span><span class="tag">3D Print</span>
+            </div>
+        </div>
+        <a href="#" class="link-arrow">View on GitHub <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card project-card">
+        <div class="card-content">
+            <h3 class="project-title">TACTIVIEW Wearable Device 👁️</h3>
+            <p>A tactical wearable system designed for situational awareness, integrating sensors, LoRa communication, and a user interface.</p>
+            <div class="tags">
+            <span class="tag">Embedded</span><span class="tag">LoRa</span><span class="tag">Sensors</span><span class="tag">UI Design</span>
+            </div>
+        </div>
+        <a href="#" class="link-arrow">View on GitHub <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card project-card">
+        <div class="card-content">
+            <h3 class="project-title">Teknofest Payload Electronic Card 🚀</h3>
+            <p>Designed and assembled the main electronic control board for a rocket payload, managing sensor data acquisition and telemetry.</p>
+            <div class="tags">
+            <span class="tag">PCB Design</span><span class="tag">Altium</span><span class="tag">Telemetry</span><span class="tag">Sensors</span>
+            </div>
+        </div>
+        <a href="#" class="link-arrow">View Project <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card project-card">
+        <div class="card-content">
+            <h3 class="project-title">CMOS OPAMP Design 📈</h3>
+            <p>Design and simulation of a two-stage CMOS Operational Amplifier meeting specific gain and bandwidth specifications.</p>
+            <div class="tags">
+            <span class="tag">Analog IC</span><span class="tag">CMOS</span><span class="tag">Circuit Simulation</span>
+            </div>
+        </div>
+        <a href="#" class="link-arrow">View Details <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card project-card">
+        <div class="card-content">
+            <h3 class="project-title">Multistage Amplifier Design 🔊</h3>
+            <p>Design and implementation of a multistage BJT amplifier circuit to achieve high gain with stable operation conditions.</p>
+            <div class="tags">
+            <span class="tag">Analog Circuits</span><span class="tag">BJT</span><span class="tag">Amplifiers</span>
+            </div>
+        </div>
+        <a href="#" class="link-arrow">View Details <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="card project-card">
+        <div class="card-content">
+            <h3 class="project-title">STM32F4xx Peripheral Drivers ⚙️</h3>
+            <p>Developed bare-metal drivers from scratch for STM32F4 MCUs, focusing on efficient register-level programming.</p>
+            <div class="tags">
+            <span class="tag">C</span><span class="tag">Bare-Metal</span><span class="tag">UART</span><span class="tag">SPI/I2C</span><span class="tag">GPIO</span>
+            </div>
+        </div>
+        <a href="#" class="link-arrow">View on GitHub <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="skills" class="container" style="background-color: #fcfcfc; border-radius: var(--radius); padding: 60px;">
+    <div class="grid-split">
+      
+      <div>
+        <h2>Technical Skills</h2>
+        <div class="skill-group">
+            <h4>Embedded Systems & MCUs</h4>
+            <ul class="skill-list">
+              <li>C / C++ Programming</li>
+              <li>STM32 (HAL, LL, Bare-metal)</li>
+              <li>UART, SPI, I2C, CAN Protocols</li>
+              <li>Real-Time Operating Systems (RTOS)</li>
+            </ul>
+        </div>
+        <div class="skill-group">
+            <h4>Hardware & Electronics</h4>
+            <ul class="skill-list">
+              <li>PCB Design (Altium/KiCad)</li>
+              <li>Circuit Analysis & Simulation</li>
+              <li>Soldering & Prototyping</li>
+              <li>Lab Equipment (Scope, Logic Analyzer)</li>
+            </ul>
+        </div>
+        <div class="skill-group">
+            <h4>IC Design & Tools</h4>
+            <ul class="skill-list">
+              <li>VLSI Basics (CMOS Layout)</li>
+              <li>Cadence Virtuoso / SPICE</li>
+              <li>MATLAB & Simulink</li>
+              <li>Python Scripting</li>
+            </ul>
+        </div>
+      </div>
+
+      <div style="background: var(--glass); padding: 30px; border-radius: var(--radius); border:1px solid var(--border);">
+        <h2>Interests & Focus Areas</h2>
+        <p style="margin-bottom:25px; color:var(--text-muted);">
+          Areas I am actively researching and aiming to specialize in:
+        </p>
+        <div class="tags" style="gap:12px;">
+            <span class="tag" style="background:#e0e7ff; color:#4338ca; font-size:0.9rem;">Embedded Software Architecture</span>
+            <span class="tag" style="background:#fce7f3; color:#be185d; font-size:0.9rem;">Mixed-Signal IC Design</span>
+            <span class="tag" style="background:#d1fae5; color:#047857; font-size:0.9rem;">Sensor Fusion</span>
+            <span class="tag" style="background:#ffedd5; color:#c2410c; font-size:0.9rem;">Control Systems</span>
+            <span class="tag" style="background:#ede9fe; color:#5b21b6; font-size:0.9rem;">IoT Protocols</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <div class="contact-box">
+      <h2>Let's Collaborate!</h2>
+      <p>Open for opportunities, collaborations, or just a tech chat.</p>
+      <a href="mailto:betulatalay2003@gmail.com" class="contact-email">betulatalay2003@gmail.com</a>
+      <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
+          <a href="#" style="color:white; border-bottom: 1px solid white;">LinkedIn</a>
+          <a href="https://github.com/betulatalay1" target="_blank" style="color:white; border-bottom: 1px solid white;">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Betül Atalay. Engineered with 💜</p>
+</footer>
+
+</body>
+</html>
