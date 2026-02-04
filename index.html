@@ -439,13 +439,13 @@ footer {
 <header>
   <div class="container">
     <nav>
-      <div class="nav-links">
-        <a href="#about">About Me</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </div>
+		<div class="nav-links">
+		  <a href="#about">About Me</a>
+		  <a href="#education">Education</a> <a href="#experience">Experience</a>
+		  <a href="#projects">Projects</a>
+		  <a href="#skills">Skills</a>
+		  <a href="#contact">Contact</a>
+		</div>
     </nav>
   </div>
 </header>
@@ -468,8 +468,8 @@ footer {
       
       <div class="social-links">
         <a href="https://github.com/betulatalay1" target="_blank">GitHub ↗</a>
-        <a href="#">LinkedIn ↗</a>
-        <a href="mailto:betul@example.com">Email ↗</a>
+        <a href="https://www.linkedin.com/in/bet%C3%BCl-atalay-310192251/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a href="mailto:betulatalay2003@gmail.com">Email ↗</a>
       </div>
     </div>
 
@@ -479,6 +479,22 @@ footer {
     </div>
   </section>
 
+	<section id="education" style="background: #fdfdfd; padding-bottom: 0;">
+	  <div class="container">
+		<h2>Education</h2>
+		<div class="exp-container">
+		  <div class="exp-card">
+			<div class="exp-header">
+			  <div>
+				<div class="company-name">Hacettepe University</div>
+				<div class="role-title">B.Sc. in Electrical and Electronics Engineering</div>
+			  </div>
+			  <span class="exp-date">2021 – Present</span>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</section>	
 
   <section id="experience" style="background: linear-gradient(to bottom, #fdfdfd, #f4f7fe);">
     <div class="container">
@@ -593,15 +609,20 @@ footer {
 			</a>
       </div>
 
-      <div class="card project-card">
-        <div class="card-content">
-            <h3 class="project-title">Teknofest Payload Electronic Card 🚀</h3>
-            <p>Designed the payload system for the 2023 Teknofest Mid-Altitude Rocket Competition, including schematic and PCB design in Altium Designer.</p>
-            <div class="tags">
-            <span class="tag">Altium Designer</span><span class="tag">STM32</span><span class="tag">Rocket Avionics</span><span class="tag">PCB Design</span>
-            </div>
+	<div class="card project-card">
+	  <div class="card-content">
+		  <h3 class="project-title">STM32F4xx Peripheral Drivers ⚙️</h3>
+		  <p>Developed bare-metal drivers from scratch for STM32F4 MCUs, focusing on efficient register-level programming.</p>
+
+		  <div class="tags">
+			  <span class="tag">C</span>
+			  <span class="tag">Bare-Metal</span>
+			  <span class="tag">UART</span>
+			  <span class="tag">SPI/I2C</span>
+			  <span class="tag">GPIO</span>
+		  </div>
         </div>
-                	<a href="https://github.com/betulatalay1/Teknofest-2023-Roket" class="link-arrow" target="_blank">
+                	<a href="https://github.com/betulatalay1/stm32f4xx-drivers" class="link-arrow" target="_blank">
 				View Details 
 				<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
 					<path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -612,103 +633,104 @@ footer {
       <div class="card project-card">
         <div class="card-content">
             <h3 class="project-title">CMOS OPAMP Design 📈</h3>
-            <p>Design and simulation of a two-stage CMOS Operational Amplifier meeting specific gain and bandwidth specifications.</p>
+            <p>A high-gain differential amplifier designed from scratch using current mirror biasing and a push-pull output stage. The project covers full-cycle analog design.</p>
+
             <div class="tags">
-            <span class="tag">Analog IC</span><span class="tag">CMOS</span><span class="tag">Circuit Simulation</span>
+            <span class="tag">Analog Circuit Design</span><span class="tag">LTSpice</span><span class="tag">Differential Amp </span><span class="tag">KiCad</span>
             </div>
         </div>
-        <a href="#" class="link-arrow">View Details <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                	<a href="https://github.com/betulatalay1/OPAMP-Project" class="link-arrow" target="_blank">
+				View Details 
+				<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+					<path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</a>
       </div>
 
-      <div class="card project-card">
-        <div class="card-content">
-            <h3 class="project-title">Multistage Amplifier Design 🔊</h3>
-            <p>Design and implementation of a multistage BJT amplifier circuit to achieve high gain with stable operation conditions.</p>
-            <div class="tags">
-            <span class="tag">Analog Circuits</span><span class="tag">BJT</span><span class="tag">Amplifiers</span>
-            </div>
-        </div>
-        <a href="#" class="link-arrow">View Details <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
+	<div class="card project-card">
+	  <div class="card-content">
+		  <h3 class="project-title">Multistage Amplifier Design 🔊</h3>
+		  <p>Design and implementation of a multistage BJT/MOSFET amplifier consisting of a buffer stage, band-pass equalizer, and gain stage, validated through simulation and lab measurements.</p>
 
-      <div class="card project-card">
-        <div class="card-content">
-            <h3 class="project-title">STM32F4xx Peripheral Drivers ⚙️</h3>
-            <p>Developed bare-metal drivers from scratch for STM32F4 MCUs, focusing on efficient register-level programming.</p>
-            <div class="tags">
-            <span class="tag">C</span><span class="tag">Bare-Metal</span><span class="tag">UART</span><span class="tag">SPI/I2C</span><span class="tag">GPIO</span>
-            </div>
-        </div>
-        <a href="#" class="link-arrow">View on GitHub <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
+		  <div class="tags">
+			  <span class="tag">Analog Circuits</span>
+			  <span class="tag">BJT</span>
+			  <span class="tag">MOSFET</span>
+			  <span class="tag">LTSpice</span>
+			  
+		  </div>
+	  </div>
+
+	  <a href="https://github.com/betulatalay1/Multistage-Amplifier" class="link-arrow" target="_blank">
+		  View Details
+		  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+			  <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		  </svg>
+	  </a>
+	</div>
+
+
+	<div class="card project-card">
+	  <div class="card-content">
+		  <h3 class="project-title">Teknofest Payload Electronic Card 🚀</h3>
+		  <p>Designed the payload system for the 2023 Teknofest Mid-Altitude Rocket Competition, including schematic and PCB design in Altium Designer.</p>
+
+		  <div class="tags">
+			  <span class="tag">Altium Designer</span>
+			  <span class="tag">STM32</span>
+			  <span class="tag">Rocket Avionics</span>
+			  <span class="tag">PCB Design</span>
+		  </div>
+	  </div>
+
+	  <a href="https://github.com/betulatalay1/Teknofest-2023-Roket" class="link-arrow" target="_blank">
+		  View Details
+	  </a>
+	</div>
 
     </div>
   </section>
 
+<section id="skills" class="container" style="background:#fcfcfc; border-radius:var(--radius); padding:60px; text-align:center;">
 
-  <section id="skills" class="container" style="background-color: #fcfcfc; border-radius: var(--radius); padding: 60px;">
-    <div class="grid-split">
-      
-      <div>
-        <h2>Technical Skills</h2>
-        <div class="skill-group">
-            <h4>Embedded Systems & MCUs</h4>
-            <ul class="skill-list">
-              <li>C / C++ Programming</li>
-              <li>STM32 (HAL, LL, Bare-metal)</li>
-              <li>UART, SPI, I2C, CAN Protocols</li>
-              <li>Real-Time Operating Systems (RTOS)</li>
-            </ul>
-        </div>
-        <div class="skill-group">
-            <h4>Hardware & Electronics</h4>
-            <ul class="skill-list">
-              <li>PCB Design (Altium/KiCad)</li>
-              <li>Circuit Analysis & Simulation</li>
-              <li>Soldering & Prototyping</li>
-              <li>Lab Equipment (Scope, Logic Analyzer)</li>
-            </ul>
-        </div>
-        <div class="skill-group">
-            <h4>IC Design & Tools</h4>
-            <ul class="skill-list">
-              <li>VLSI Basics (CMOS Layout)</li>
-              <li>Cadence Virtuoso / SPICE</li>
-              <li>MATLAB & Simulink</li>
-              <li>Python Scripting</li>
-            </ul>
-        </div>
-      </div>
+  <h2>Technical Focus</h2>
 
-      <div style="background: var(--glass); padding: 30px; border-radius: var(--radius); border:1px solid var(--border);">
-        <h2>Interests & Focus Areas</h2>
-        <p style="margin-bottom:25px; color:var(--text-muted);">
-          Areas I am actively researching and aiming to specialize in:
-        </p>
-        <div class="tags" style="gap:12px;">
-            <span class="tag" style="background:#e0e7ff; color:#4338ca; font-size:0.9rem;">Embedded Software Architecture</span>
-            <span class="tag" style="background:#fce7f3; color:#be185d; font-size:0.9rem;">Mixed-Signal IC Design</span>
-            <span class="tag" style="background:#d1fae5; color:#047857; font-size:0.9rem;">Sensor Fusion</span>
-            <span class="tag" style="background:#ffedd5; color:#c2410c; font-size:0.9rem;">Control Systems</span>
-            <span class="tag" style="background:#ede9fe; color:#5b21b6; font-size:0.9rem;">IoT Protocols</span>
-        </div>
-      </div>
+  <p style="max-width:600px; margin:20px auto 40px; color:var(--text-muted);">
+    My technical expertise spans from embedded software to transistor-level IC design and AI-driven edge computing.
+  </p>
 
-    </div>
-  </section>
+  <div class="tags" style="justify-content:center; gap:14px;">
+  
+	
 
-  <section id="contact" class="container">
-    <div class="contact-box">
-      <h2>Let's Collaborate!</h2>
-      <p>Open for opportunities, collaborations, or just a tech chat.</p>
-      <a href="mailto:betulatalay2003@gmail.com" class="contact-email">betulatalay2003@gmail.com</a>
-      <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
-          <a href="#" style="color:white; border-bottom: 1px solid white;">LinkedIn</a>
-          <a href="https://github.com/betulatalay1" target="_blank" style="color:white; border-bottom: 1px solid white;">GitHub</a>
-      </div>
-    </div>
-  </section>
+    <span class="tag">Embedded Systems</span>
+    <span class="tag">Bare-Metal C</span>
+    <span class="tag">STM32 / PIC32</span>
+    <span class="tag">FreeRTOS</span>
 
+    <span class="tag">PCB Design</span>
+    <span class="tag">Analog Circuits</span>
+    <span class="tag">Hardware Bring-up</span>
+
+    <span class="tag">Full-Custom CMOS</span>
+    <span class="tag">VLSI </span>
+    <span class="tag">SPICE Simulation</span>
+
+    <span class="tag">Computer Vision</span>
+    <span class="tag">YOLO</span>
+    <span class="tag">Deep Learning</span>
+
+  </div>
+
+</section>
+
+<section id="contact" class="container">
+  <div class="contact-box">
+    <h2>Let's Collaborate!</h2>
+    <p>Open for opportunities, collaborations, or just a tech chat.</p>
+    <a href="mailto:betulatalay2003@gmail.com" class="contact-email">betulatalay2003@gmail.com</a>
+  </div>
+</section>
 </main>
 
 <footer>
